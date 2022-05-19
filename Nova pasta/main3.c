@@ -58,17 +58,61 @@ int exerVetores02(){
      printf("\n Soma dos vetores\n");
     for (int i = 0; i < 5; i++)
     {
-        somaVetores[5] = vetor1[i] + vetor2[i];
-        printf("\n%i + %i = %i: ",vetor1[i],vetor2[i],somaVetores[5]);
+        somaVetores[i] = vetor1[i] + vetor2[i];
+        printf("\n%i + %i = %i: ",vetor1[i],vetor2[i],somaVetores[i]);
     }
 
 
 }
 
+int exerVetores03(){
+    
+    /*
+    Escrever um programa que lê um vetor N de tamanho 20 e o imprime na tela. Em seguida, troque
+    o 1o elemento com o último, o 2a com o penúltimo, ... até o 10a com o 11o. Imprima o vetor N
+    modificado.
+    */
+
+    int vetor1[5], somaVetores[5];
+
+    for (int i = 0; i < 4; i++)
+    {
+        printf("Informe o valor %i: ",i);
+        scanf("%i",&vetor1[i]);
+    }
+
+     for (int i = 0; i < 4; i++)
+    {
+        printf("\nInforme o valor %i : %i ",i,vetor1[i]);
+        
+    }
+
+    printf("\n\n");
+    int aux;
+    for (int i = 0; i < 1; i++)
+    {
+        aux = vetor1[i];
+        vetor1[i] = vetor1[4];
+        vetor1[4] = aux;
+        vetor1[4]--;
+    }
+    for (int i = 0 ; i < 3; i++)
+    {
+        printf(" %i",vetor1[i]);
+    }
+    
+    
+    
+   
+    
+
+    
+
+}
 
 
 int main()
 {
-    exerVetores02();
+    exerVetores03();
     return 0;
 }
