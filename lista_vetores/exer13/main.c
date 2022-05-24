@@ -1,25 +1,25 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
-   
-   int vetor[5],posi=0;
+   float salario[10],maiorSalario=0;
 
-   for (int i = 1; i < 6; i++)
+   for (int i = 0; i < 10; i++)
    {
-       printf("Informe o %i° valor: ",i);
-       scanf("%i",&vetor[i]);
+       printf("Informe o salario: ");
+       scanf("%f",&salario[i]);
    }
-   printf("Qual posicao no vetor voce que saber: ");
-   scanf("%i",&posi);
-
-   for (int i = 1; i < 6; i++)
+   for (int i = 0; i < 10; i++)
    {
-       if (posi == vetor[i])
+       if (salario[i] > maiorSalario)
        {
-        printf("%i na posicao %i", posi,i);
-       } 
+           maiorSalario = salario[i];
+       }
+       
    }
+     printf("O maior o salario %.2f",maiorSalario);
    
     return 0;
 }
+
+//feito
