@@ -1,25 +1,25 @@
+/*Escreva um programa em C para contar o número total de palavras em uma string.*/
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
-   
-   int vetor[5],posi=0;
+    int  cont = 1;
+    char string[30];
 
-   for (int i = 1; i < 6; i++)
-   {
-       printf("Informe o %i° valor: ",i);
-       scanf("%i",&vetor[i]);
-   }
-   printf("Qual posicao no vetor voce que saber: ");
-   scanf("%i",&posi);
+    printf("Escreva para eu descobir total de palavras\n");
+    scanf("%[^\n]",string);
 
-   for (int i = 1; i < 6; i++)
-   {
-       if (posi == vetor[i])
-       {
-        printf("%i na posicao %i", posi,i);
-       } 
-   }
+    for (int i = 0; i < 60; i++)
+    {
+        if (string[i] == ' ')
+        {
+            cont++;
+        }
+    }
+
+    printf("Total de palavavras e : %d",cont);
    
     return 0;
 }
