@@ -1,25 +1,50 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
-   
-   int vetor[5],posi=0;
+   int k=0;
+    char string[15], string2[15], string3[30];
 
-   for (int i = 1; i < 6; i++)
-   {
-       printf("Informe o %i° valor: ",i);
-       scanf("%i",&vetor[i]);
-   }
-   printf("Qual posicao no vetor voce que saber: ");
-   scanf("%i",&posi);
 
-   for (int i = 1; i < 6; i++)
+   printf("Informe seu nome: ");
+   gets(string);
+
+   printf("Informe seu sobrenome: ");
+   gets(string2);
+
+
+   for (int i = 0; i < 15; i++)
    {
-       if (posi == vetor[i])
+      
+       if (string[i] == '\0')
        {
-        printf("%i na posicao %i", posi,i);
-       } 
+           for (int j = i ; j < 30; j++)
+           {
+               string[j] = string2[k];
+               k++;
+               
+               if (string2[j] == '\0' )
+               {
+                   break;
+               }
+           }
+              
+       }
+       
    }
+
+   
+   for (int i = 0; i < 30; i++)
+   {
+       printf("%c",string[i]);
+   }
+   
+    
+  
+
+   
    
     return 0;
 }

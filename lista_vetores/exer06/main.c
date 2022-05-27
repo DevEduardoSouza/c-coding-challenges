@@ -11,11 +11,7 @@ int main()
 
     for (int i = strlen(string); i >= 0; i--)
     {
-        
-             printf("%c",string);
-          
+             printf("%c",string[i]);
     }
-
-
     return 0;
-}
+}//completo
