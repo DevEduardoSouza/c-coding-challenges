@@ -15,9 +15,8 @@ int main()
         {
             if ( numero[i] == numero[j])
             {
-                cont = cont + 1;
+                cont++;
             }
-            
         }
         
     }
