@@ -3,23 +3,24 @@
 int main(int argc, char const *argv[])
 {
    
-   int vetor[5],posi=0;
+   float vetor[5], soma=0,media;
 
-   for (int i = 1; i < 6; i++)
+   for (int i = 0; i < 5; i++)
    {
-       printf("Informe o %i° valor: ",i);
-       scanf("%i",&vetor[i]);
+       printf("Informe o valor: ",i);
+       scanf("%f",&vetor[i]);
    }
-   printf("Qual posicao no vetor voce que saber: ");
-   scanf("%i",&posi);
+   
+   for (int i = 0; i < 5; i++)
+   {
+       soma = soma + vetor[i];
+       media = soma / 5.0 ;
+   }
 
-   for (int i = 1; i < 6; i++)
-   {
-       if (posi == vetor[i])
-       {
-        printf("%i na posicao %i", posi,i);
-       } 
-   }
+   printf("\nA media dos  valores: %.2f",media);
+   
    
     return 0;
 }
+
+//feito

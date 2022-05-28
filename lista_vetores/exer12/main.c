@@ -1,25 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
    
-   int vetor[5],posi=0;
+   int vetor[10], valor, cont =0;
 
-   for (int i = 1; i < 6; i++)
+   for (int i = 1; i < 11; i++)
    {
        printf("Informe o %i° valor: ",i);
-       scanf("%i",&vetor[i]);
+       scanf("%d",&vetor[i]);
    }
-   printf("Qual posicao no vetor voce que saber: ");
-   scanf("%i",&posi);
 
-   for (int i = 1; i < 6; i++)
+   printf("Busca um elemento no vetor: ");
+   scanf("%d",&valor);
+
+   for (int i = 1; i < 11; i++)
    {
-       if (posi == vetor[i])
+       if (valor == vetor[i])
        {
-        printf("%i na posicao %i", posi,i);
-       } 
+         printf("\n\nO valor %d, foi encontrado na posicao %d",valor,i);
+       }
+
+       if (valor != vetor[i])
+       {
+           cont++;
+       }
+       
+       if (cont == 10)
+       {
+          printf("\nA posicao nao foi encontrada");
+       }
+       
    }
    
     return 0;
 }
+//feito
