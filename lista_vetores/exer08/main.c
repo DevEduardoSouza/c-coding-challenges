@@ -4,8 +4,8 @@
 
 int main()
 {
-   int k=0;
-    char string[15], string2[15], string3[30];
+    int k=0;
+    char string[30] = {'\0'} , string2[30] = {'\0'};
 
 
    printf("Informe seu nome: ");
@@ -15,36 +15,21 @@ int main()
    gets(string2);
 
 
-   for (int i = 0; i < 15; i++)
+   for (int i = 0; i < 30; i++)
    {
-      
        if (string[i] == '\0')
        {
-           for (int j = i ; j < 30; j++)
-           {
-               string[j] = string2[k];
-               k++;
-               
-               if (string2[j] == '\0' )
-               {
-                   break;
-               }
-           }
-              
-       }
-       
+            string[i]  = string2[k];
+            k++;      
+       }       
    }
-
    
    for (int i = 0; i < 30; i++)
    {
        printf("%c",string[i]);
    }
    
-    
-  
 
-   
-   
     return 0;
 }
+//feito
