@@ -1,33 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-
+#include <windows.h>
 
 int main(){
-    int opcao;
+    int opcao, opcao_s_n;
     int senha, senhaCadastro;
+    int contTrocar_senha=0;
     char name[30];
 
     do
-    {
-        
+    { 
         printf("\n\t\t\tBem vindo ao nosso programa\n\n");
         printf("Insira a opcao desejada.\n1 - login\n2 - Cadastra\n3 - Sair\n");
         scanf("%d",&opcao);
+        Sleep(500);
+        system("cls");
 
         do
         {
-            /* code */
-        
-        
+            
             switch (opcao)
             {
-                case 1:
+                case 1: // login de usuarios
                     printf("\t\t\tLogin do usuario\n\n");
                     printf("Informe seu nome\n");
                     scanf(" %[^\n]",name);
-
                     
                     do
                     {
@@ -38,15 +36,47 @@ int main(){
                         {
                             printf("\nSenha valida, Logando.......\n");
                             
-                        }else{
-                            printf("Senha Invalida....");
+                        }else{ 
+                            printf("\nSenha invalida....\n");
+                            contTrocar_senha++;
+                        }
+                        Sleep(1500);
+                        system("cls");
+
+                        if (contTrocar_senha == 4)//recuperara senha
+                        {                           
+                            do
+                            {    
+                                printf("\nDeseja recuperar sua senha? (1 - sim) ou (2 - nao)");  
+                                scanf("%d",&opcao_s_n);
+  
+                                switch (opcao_s_n)
+                                {
+                                    case 1:
+                                            printf("\nMudando a senha\n");
+                                        break;
+
+                                    case 2:
+                                        
+                                        break;
+                                    
+                                    default:
+                                    printf("\nOpcao invalida\n");
+                                    Sleep(1500);
+                                    system("cls");
+                                    
+                                    break;
+                                }
+                                contTrocar_senha=0; //resetando cont, para aoerecer esse if outras vezes
+                            } while (opcao_s_n > 2 );
+
                         }
 
                     } while (senha != senhaCadastro);
                     
                 break;
 
-                case 2:
+                case 2: // cadastrar usuarios 
                     printf("\t\t\tCadastramento de  usuario\n\n");
 
                     printf("Informe seu nome\n");
@@ -62,8 +92,11 @@ int main(){
                             {
                                 printf("\nSenha nao valida. Por favor digite ate 4 digitos\n");
                             }else{
-                                printf("\nSenha valida....\nUsuario cadastrado com sucesso\n");
+                              efeitoCarregamento();
+                              printf("\nSenha valida\nUsuario cadastrado com sucesso\n");
                             }
+                             Sleep(4000);
+                             system("cls");
 
                     } while (senhaCadastro > 9999 );
 
@@ -83,4 +116,20 @@ int main(){
     } while (senha != senhaCadastro && opcao != 3);
 
     return 0;
+}
+
+int efeitoCarregamento(){
+    printf("processando dados.");
+    for (int i = 0; i < 3; i++)
+    {
+        Sleep(200);
+        printf(".");
+        Sleep(200);
+        printf(".");
+        Sleep(200);
+        printf(".");
+        Sleep(200);
+        printf(".");
+        Sleep(200);   
+    }
 }
