@@ -43,8 +43,7 @@ int main()
             {
                 aux = num[i+j];
                 num[i+j] = novoValor;
-
-                
+ 
             }
             
         }

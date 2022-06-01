@@ -1,23 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char const *argv[])
-{
-    char nome[30];
+int main() {
+  char nome[50], a[50];
+  int i, qtdCaracter;
 
-    printf("Informe seu nome: ");
-    gets(nome);
+  printf("Digite uma palavra: ");
+  scanf("%[^\n]s", &nome);
 
-    for (int i = 0; i < 30; i++)
-    {
-        if (nome[i] == strupr)
-        {
-            printf("IHHEEEEE!!!");
-        }
-        
+  qtdCaracter = strlen(nome);
+
+  for (i = 0; i < qtdCaracter; i++) {
+    if ((nome[i] >= 'A') && (nome[i] <= 'Z')) {
+
+      a[i] = nome[i] + 32;
+
+    } else if ((nome[i] >= 'a') && (nome[i] <= 'z')) {
+      a[i] = nome[i] - 32;
+     
+    } else {
+      a[i] = nome[i];
     }
-    
-    
-    return 0;
-}
+  }
+  a[i] = '\0';
+
+  printf("%s\n", a);
+  
+
+  return (0);
+   }
+   //feito
