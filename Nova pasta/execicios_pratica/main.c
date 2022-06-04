@@ -295,9 +295,118 @@ int exer010()
    printf("\n\nA medida da turma %.2f\n\n",mediaTurma);
    
 }
+int exer011()
+{
+    /*
+   Fac ̧a um programa que preencha um vetor com 10 numeros reais, calcule e mostre a quantidade de numeros negativos e a soma dos n  ́ umeros positivos desse vetor.
+    */
 
+   float num[10], soma=0;
+   int contNegativo = 0;
+
+ 
+   for (int i = 0; i < 10; i++)
+   {
+       printf("Insira um numero real : ");
+       scanf("%f",&num[i]);    
+   }
+   
+   for (int i = 0; i < 10; i++)
+   {
+       if (num[i] < 0)
+       {
+           contNegativo++;
+       }
+       else if (num[i] > 0)
+       {
+           soma = soma + num[i];
+       }
+   }
+
+   printf("\nA quantidade de numeros negativos e: %d\nA soma dos numeros positivos: %.2f",contNegativo,soma); 
+}
+int exer012()
+{
+    /*
+   Fazer um programa para ler 5 valores e, em seguida, mostrar todos os valores lidos
+   juntamente com o maior, o menor e a media dos valores.
+    */
+
+   int num[5], maiorNum=0, menorNum=0, soma=0;
+   float media;
+  
+
+ 
+   for (int i = 0; i < 5; i++)
+   {
+       printf("Insira um numero interio: ");
+       scanf("%d",&num[i]);
+   }
+
+   Sleep(1000);
+   system("cls");
+
+   printf("Todos os valores lidos:");
+   for (int i = 0; i < 5; i++)
+   {
+       if(i == 0 ){
+          menorNum = num[i];
+       } 
+       if(num[i] > maiorNum){
+           maiorNum = num[i];
+       }
+       if(num[i] < menorNum){
+            menorNum = num[i];
+       }
+        soma = soma + num[i];
+        printf("%d ",num[i]);
+   }
+
+    media = soma / 5.0; 
+    printf("\n\n o maior numero: %d\no menor numero: %d\nA media dos numeros: %.2f",maiorNum,menorNum,media);
+}
+int exer013()
+{
+    /*
+   Fazer um programa para ler 5 valores e, em seguida, mostrar a posic ̧ao onde se encon-tram o maior e o menor valor.
+    */
+
+   int num[5], maiorNum=0, menorNum=0, posicaoMaior=0, posicaoMenor=0;
+
+   
+  
+
+ 
+   for (int i = 0; i < 5; i++)
+   {
+       printf("Insira um numero interio: ");
+       scanf("%d",&num[i]);
+   }
+
+  
+   for (int i = 0; i < 5; i++)
+   {
+       if(i == 0)
+       {
+          menorNum = num[i];
+       } 
+       if(num[i] > maiorNum)
+       {
+           maiorNum = num[i];
+           posicaoMaior = i;
+       }
+       if(num[i] < menorNum)
+       {
+            menorNum = num[i];
+            posicaoMenor = i;
+       }
+
+   }
+
+    printf("\n\n o maior numero: %d, e ele esta na posicao %d\no menor numero: %d, e ele esta na posicao %d\n",maiorNum,posicaoMaior,menorNum,posicaoMenor);
+}
 int main()
 {
-    exer010();
+    exer013();
     return 0;
 }
