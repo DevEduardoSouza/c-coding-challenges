@@ -373,10 +373,6 @@ int exer013()
 
    int num[5], maiorNum=0, menorNum=0, posicaoMaior=0, posicaoMenor=0;
 
-   
-  
-
- 
    for (int i = 0; i < 5; i++)
    {
        printf("Insira um numero interio: ");
@@ -405,8 +401,158 @@ int exer013()
 
     printf("\n\n o maior numero: %d, e ele esta na posicao %d\no menor numero: %d, e ele esta na posicao %d\n",maiorNum,posicaoMaior,menorNum,posicaoMenor);
 }
+int exer014()
+{
+    /*
+   Fac ̧a um programa que leia um vetor de 10 posic ̧oes e verifique se existem valores iguais e os escreva na tela.
+    */
+
+   int num[10];
+
+   for (int i = 0; i < 10; i++)
+   {
+       printf("Informe um numero interio: ");
+       scanf("%d",&num[i]);
+   }
+
+    printf("\n");
+   for (int i = 0; i < 10; i++)
+   {
+       for(int j = i+1; j< 10; j++)
+       {
+           if(num[i] == num[j])
+           {
+               printf("\nO numero %d se repete:",num[i]);
+           }
+       }
+   }
+   
+}
+int exer015()
+{
+    /*
+   Fac ̧a um programa que leia um vetor de 10 posic ̧oes e verifique se existem valores iguais e os escreva na tela.
+    */
+
+   int num[10], num2[10], cont=0;
+
+   for (int i = 0; i < 10; i++)
+   {
+       printf("Informe um numero interio: ");
+       scanf("%d",&num[i]);
+   }
+
+    printf("\n");
+   for (int i = 0; i < 10; i++)
+   {
+       for(int j = i+1; j < 10; j++)
+       {
+           if(num[i] != num[j])
+           {
+               cont++;
+           }
+       }
+       if(cont == 9 - i)
+       {
+           printf("\n %d", num[i]);
+       }
+       cont=0;
+   }
+}
+int exer016()
+{
+    /*
+    Fac ̧a um programa que leia um vetor de 5 posic ̧oes para n  ̃ umeros reais e, depois, um  ́
+    codigo inteiro. Se o c  ́ odigo for zero, finalize o programa; se for 1, mostre o vetor na ordem  ́
+    direta; se for 2, mostre o vetor na ordem inversa. Caso, o codigo for diferente de 1 e 2  ́
+    escreva uma mensagem informando que o codigo  ́ e inv  ́ alido.
+    */
+
+   float num[5];
+   int codigo;
+
+   for(int i = 0; i < 5; i++)
+   {
+       printf("Digite um numero real: ");
+       scanf("%f",&num[i]);
+   }
+
+   
+
+   do
+   {
+       printf("\t\tOpcoes\n0 - Finalizar o programa\n1 - mostra o vetor na ordem direta\n2 - vetro na ordem inversa\n");
+       scanf("%d",&codigo);
+       system("cls");
+
+        switch (codigo)
+        {
+            case 0:
+                    printf("Programa encerrado...");
+                break;
+            case 1:
+                printf("vetor na ordem direta: ");
+                for (int i = 0; i < 5; i++)
+                {
+                    printf("%.2f ", num[i]);
+                }
+                printf("\n");
+                break;
+            case 2:
+                printf("vetor na ordem INVERSA: ");
+                for (int i = 4; i >= 0; i--)
+                {
+                    printf("%.2f ", num[i]);
+                }
+                printf("\n");
+                break;
+            
+            default:
+               printf("\nOpcao invalida\n");
+               Sleep(1000);
+               system("cls");
+             break;
+        }
+
+    } while (codigo != 0);
+   
+
+   
+}
+int exer017()
+{
+    /*
+      Leia um vetor de 10 posic ̧oes e atribua valor 0 para todos os elementos que possu  ̃  ́ırem
+      valores negativos.
+    */
+
+
+   int num[10];
+
+   for(int i = 0; i < 10; i++)
+   {
+       printf("Digite um numero inteiro: ");
+       scanf("%d",&num[i]);
+   }
+
+   for (int i = 0; i < 10; i++)
+   {
+       if (num[i] < 0)
+       {
+           num[i] = 0;
+       }
+   }
+   printf("\n\n");
+   for (int i = 0; i < 10; i++)
+   {
+      printf("%d ", num[i]);
+   }
+
+}
+
 int main()
 {
-    exer013();
+
+    exer017();
     return 0;
 }

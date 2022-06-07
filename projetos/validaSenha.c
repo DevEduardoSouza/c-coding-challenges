@@ -53,7 +53,7 @@ int main(){
                                 switch (opcao_s_n)
                                 {
                                     case 1:
-                                            printf("\nMudando a senha\n");
+                                            printf("\nMudando a senha\n"); //nao completa
                                         break;
 
                                     case 2:
@@ -67,7 +67,7 @@ int main(){
                                     
                                     break;
                                 }
-                                contTrocar_senha=0; //resetando cont, para aoerecer esse if outras vezes
+                                contTrocar_senha=0; //resetando cont, para aperecer esse if outras vezes
                             } while (opcao_s_n > 2 );
 
                         }
