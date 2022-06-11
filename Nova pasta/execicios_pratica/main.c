@@ -38,7 +38,6 @@ int exer001()
     return 0;
 }
 int exer002()
-
 {
     /*
    Crie um programa que le 6 valores inteiros e, em seguida, mostre na tela os valores lidos.
@@ -55,7 +54,6 @@ int exer002()
    {
        printf("\n%d",vetor[i]);
    }
-   
    
 }
 int exer003()
@@ -549,10 +547,86 @@ int exer017()
    }
 
 }
+int exer018()
+{
+    /*
+        Fac ̧a um programa que leia um vetor de 10 numeros. Leia um n  ́ umero  ́ x. Conte os
+        multiplos de um n  ́ umero inteiro  ́ x num vetor e mostre-os na tela.
+    */
 
+
+   int num[10], multiplo;
+
+   for(int i = 0; i < 10; i++)
+   {
+       printf("Digite um numero inteiro: ");
+       scanf("%d",&num[i]);
+   }
+
+   printf("Informe um numero: ");
+   scanf("%d",&multiplo);
+
+   printf("\nTodos os multiplos de %d dentro do vetor: ",multiplo);
+   for (int i = 0; i < 10; i++)
+   {
+        if (num[i] % multiplo == 0)
+        {
+            printf(" %d", num[i]);
+        }
+   }
+   
+}
+int exer019(){
+    /*
+        Fac ̧a um vetor de tamanho 50 preenchido com o seguinte valor: (i+ 5 ∗ i)%(i+ 1), sendo
+        i a posic ̧ao do elemento no vetor. Em seguida imprima o vetor na tela.  ̃
+    */
+
+
+   float num[50];
+
+   for(int i = 0; i < 50; i++)
+   {
+       num[i] = (i + (5 * i)) % (i + 1);
+   }
+
+   for (int i = 0; i < 50; i++)
+   {
+      printf(" %d", num[i]);
+   }
+   
+
+}
+int exer020(){
+    /*
+       Escreva um programa que leia numeros inteiros no intervalo [0,50] e os armazene em um  ́
+        vetor com 10 posic ̧oes. Preencha um segundo vetor apenas com os n  ̃ umeros  ́  ́ımpares
+        do primeiro vetor. Imprima os dois vetores, 2 elementos por linha.
+    */
+
+
+   int num[10], impar[10];
+
+   for(int i = 0; i < 50; i++)
+   {
+       printf("Informe um numero: ");
+       scanf("%d", &num[i]);
+
+       if (num[i] % 2 == 1)
+       {
+          impar[i] = num[i];
+       }
+   }
+   printf("\n\n");
+   for (int i = 0; i < 10; i++)
+   {
+      printf(" %d", impar[i]);
+   }
+   
+
+}
 int main()
 {
-
-    exer017();
+    exer20();
     return 0;
 }
