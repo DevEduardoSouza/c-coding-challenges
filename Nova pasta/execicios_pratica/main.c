@@ -1,5 +1,4 @@
 /*Link:
-
     https://classroom.google.com/u/0/w/NDU5Njg3NTU3MDE2/t/all
 */
 
@@ -576,7 +575,8 @@ int exer018()
    }
    
 }
-int exer019(){
+int exer019()
+{
     /*
         Fac ̧a um vetor de tamanho 50 preenchido com o seguinte valor: (i+ 5 ∗ i)%(i+ 1), sendo
         i a posic ̧ao do elemento no vetor. Em seguida imprima o vetor na tela.  ̃
@@ -597,7 +597,8 @@ int exer019(){
    
 
 }
-int exer020(){
+int exer020()
+{
     /*
        Escreva um programa que leia numeros inteiros no intervalo [0,50] e os armazene em um  ́
         vetor com 10 posic ̧oes. Preencha um segundo vetor apenas com os n  ̃ umeros  ́  ́ımpares
@@ -606,19 +607,22 @@ int exer020(){
 
 
    int num[10], impar[10];
+   int j = 0, contImpar = 0;
 
-   for(int i = 0; i < 50; i++)
+   for(int i = 0; i < 10; i++)
    {
        printf("Informe um numero: ");
        scanf("%d", &num[i]);
 
        if (num[i] % 2 == 1)
        {
-          impar[i] = num[i];
+          impar[j] = num[i];
+          j++;
+          contImpar++;
        }
    }
    printf("\n\n");
-   for (int i = 0; i < 10; i++)
+   for (int i = 0; i < contImpar; i++)
    {
       printf(" %d", impar[i]);
    }
@@ -627,6 +631,6 @@ int exer020(){
 }
 int main()
 {
-    exer20();
+    exer020();
     return 0;
 }
