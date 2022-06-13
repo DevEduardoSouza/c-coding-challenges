@@ -629,8 +629,162 @@ int exer020()
    
 
 }
+int exer021()
+{
+    /*
+      Fac ̧a um programa que receba do usuario dois vetores,  ́ A e B, com 10 numeros inteiros  ́
+        cada. Crie um novo vetor denominado C calculando C = A - B. Mostre na tela os dados
+        do vetor C.
+    */
+
+
+   int vetor1[10], vetor2[10], subtra[10]; 
+
+   for (int i = 0; i < 10; i++)
+   {
+     printf("informe um numero: ");
+     scanf("%d", &vetor1[i]);
+   }
+    printf("\n");
+    for (int i = 0; i < 10; i++)
+   {
+     printf("informe um numero: ");
+     scanf("%d", &vetor2[i]);
+   }
+   
+   for (int i = 0; i < 10; i++)
+   {
+     subtra[i] = vetor1[i] - vetor2[i];
+   }
+   
+   for (int i = 0; i < 10; i++)
+   {
+     printf("%d - %d = %2d\n",vetor1[i], vetor2[i], subtra[i]);
+   }
+}
+int exer022()
+{
+    /*
+      Fac ̧a um programa que leia dois vetores de 10 posic ̧oes e calcule outro vetor contendo,  ̃
+    nas posic ̧oes pares os valores do primeiro e nas posic ̧  ̃ oes impares os valores do se-  ̃
+    gundo.
+    */
+
+     int vetor1[10], vetor2[10], vetor3[10] ;
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Informe um numero: ");
+        scanf("%d", &vetor1[i]);
+    }
+
+    printf("\n");
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Informe um numero: ");
+        scanf("%d", &vetor2[i]);
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (i % 2 == 0 )
+        {
+            vetor3[i] = vetor1[i];
+        }else{
+            vetor3[i] = vetor2[i];
+        }
+    }
+
+    printf("\n");
+
+     for (int i = 0; i < 10; i++)
+    {
+        printf(" %d", vetor3[i]);
+    }
+}
+int exer024()
+{
+    /*
+    Fac ̧a um programa que leia dez conjuntos de dois valores, o primeiro representando o
+    numero do aluno e o segundo representando a sua altura em metros. Encontre o aluno  ́
+    mais baixo e o mais alto. Mostre o numero do aluno mais baixo e do mais alto, juntamente  ́
+    com suas alturas.
+    */
+
+    int vetor1[10], posiAlto, posiBaixo;
+    float altura[10], alunoMaisAlto=0, alunoMaisBaixo=0;
+
+    for (int i = 1; i < 6; i++)
+    {
+        printf("Informe o numero do aluno: ");
+        scanf("%d", &vetor1[i]);
+
+        for (int j = i; j <= i ; j++)
+        {
+            printf("Informa a altura do aluno: ");
+            scanf("%f", &altura[j]);
+
+            
+            if (i == 1)
+            {
+                alunoMaisBaixo = altura[i];
+            }
+            
+            if (altura[i] > alunoMaisAlto)
+            {
+                alunoMaisAlto = altura[i];
+                posiAlto = i;
+            }
+
+        
+           if (altura[i] <= alunoMaisBaixo)
+            {
+                alunoMaisBaixo = altura[i];
+                posiBaixo = i;
+            }
+        
+            
+        }
+
+        printf("\n");
+    }
+
+    for (int i = 1; i < 6; i++)
+    {
+        printf("aluno: %d -> altura : %.2f\n", vetor1[i], altura[i]);
+    }
+
+    printf("\n\naluno %d e mais alto %.2f\naluno %d e mais baixo %.2f",posiAlto, alunoMaisAlto, posiBaixo, alunoMaisBaixo );
+
+}
+int exer025()
+{
+    /*
+    Fac ̧a um programa que preencha um vetor de tamanho 100 com os 100 primeiros natu-
+    rais que nao s  ̃ ao m  ̃ ultiplos de 7 ou que terminam com 7.  ́
+    */
+
+    int vetor[100];
+
+    for (int i = 0; i < 100; i++)
+    {
+        if (i % 7 > 0)
+        {
+             vetor[i] = i;
+        }
+    }
+
+    for (int i = 0; i < 100; i++)
+    {
+       printf(" %d", vetor[i]);
+    }
+    
+}
+
 int main()
 {
-    exer020();
+    exer025();
+    
     return 0;
 }
