@@ -786,35 +786,41 @@ int exer026(){
     Tentando descobrir se um dado era viciado, um dono de cassino honesto (ha! ha! ha! ha!) o lançou n vezes. Dados os n resultados dos lançamentos, determinar o número de ocorrências de cada face.
     */
 
-    int num[10], cont = 1;
+    int num[6] = {5,2,5,3,4,5};
+    int cont = 1;
+    int vetor[6];
 
     printf("Ola vamos ver seu seu dado esta viciado, balance e joge, em seguida informe o valor\n");
 
 
-    for (int i = 0; i < 5; i++)
-    {
-       scanf("%d",&num[i]);
-    }
+    //for (int i = 0; i < 5; i++)
+    //{
+    //   scanf("%d",&num[i]);
+    //}
     
     printf("\n");
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 6; i++)
     {
-        for (int j = i+1; j < 5; j++)
-        {
-
-        if (i != j)
+        for (int j = i+1; j < 6; j++)
         {
             if (num[i] == num[j])
             {
                 cont++;
             }
         }
-        
-            
-        }
-        printf(" %d ocorreu %d vezes\n", num[i], cont);
+        if (cont == 1)
+            {
+                cont = 0;
+            }
+        vetor[i] = cont;
     }
+
+    for (int i = 0; i < 6; i++)
+    {
+        printf("%d ocorreu %d vezes\n",num[i],vetor[i]);
+    }
+    
 
 }// imcompleto
 
